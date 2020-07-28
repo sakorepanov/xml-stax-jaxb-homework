@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="category" type="xs:string"/>
-  <xs:element name="color" type="xs:string"/>
-  <xs:element name="manufacturer" type="xs:string"/>
-  <xs:element name="model" type="xs:string"/>
-  <xs:element name="price" type="xs:float"/>
-  <xs:element name="quantity" type="xs:byte"/>
-  <xs:element name="subcategory" type="xs:string"/>
+<xs:schema elementFormDefault="qualified" targetNamespace="sameUri" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="items">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="category"/>
-        <xs:element ref="color"/>
-        <xs:element ref="manufacturer"/>
-        <xs:element ref="model"/>
-        <xs:element ref="price"/>
-        <xs:element ref="quantity"/>
-        <xs:element ref="subcategory"/>
+        <xs:element name="item">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="color"/>
+              <xs:element type="xs:string" name="manufacturer"/>
+              <xs:element type="xs:string" name="model"/>
+              <xs:element name="date">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-3][0-9]-[01][0-9]-[0-9]{4}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:float" name="price"/>
+              <xs:element type="xs:byte" name="quantity"/>
+              <xs:element type="xs:string" name="subcategory"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="category"/>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

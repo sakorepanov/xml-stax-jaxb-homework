@@ -1,24 +1,31 @@
+package domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@JsonIgnoreProperties(ignoreUnknown=true)
-@XmlRootElement(name="items")
+//@JacksonXmlRootElement(localName = "items", namespace = "sameUri")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlRootElement(name = "item")
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
+
 
     private String category;
     private String subcategory;
     private String manufacturer;
+    private String date;
     private String model;
     private String color;
     private Double price;
     private int quantity;
 
-    public Product(String category, String subcategory, String manufacturer, String model, String color, Double price, int quantity) {
-
+    public Product(String category, String subcategory, String manufacturer, String date, String model, String color, Double price, int quantity) {
         this.category = category;
         this.subcategory = subcategory;
         this.manufacturer = manufacturer;
+        this.date = date;
         this.model = model;
         this.color = color;
         this.price = price;
@@ -34,6 +41,7 @@ public class Product {
                 "category='" + category + '\'' +
                 ", subcategory='" + subcategory + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
+                ", date='" + date + '\'' +
                 ", model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", price=" + price +
@@ -41,6 +49,7 @@ public class Product {
                 '}';
     }
 
+    @XmlAttribute
     public String getCategory() {
         return category;
     }
@@ -63,6 +72,14 @@ public class Product {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getModel() {

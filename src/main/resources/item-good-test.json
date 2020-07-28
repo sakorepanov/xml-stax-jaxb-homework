@@ -1,1 +1,1 @@
-{"category":"Comps","subcategory":"Monitors","manufacturer":"HP","model":"HHH","color":"Black","price":4000.0,"quantity":5}
+{"schemaLocation":"sameUri item-good-test.xsd","item":{"category":"Computers","color":"Black","manufacturer":"HP","model":"HHH","date":"10-04-2019","price":"4000.0","quantity":"5","subcategory":"Monitors"}}

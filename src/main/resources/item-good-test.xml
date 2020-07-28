@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<items xmlns="file://C:/Users/Sergei_Korepanov2/IdeaProjects/xml-stax-jaxb-homework/src/main/resources/item-good-test.xsd"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="file://C:/Users/Sergei_Korepanov2/IdeaProjects/xml-stax-jaxb-homework/src/main/resources/item-good-test.xsd ">
-    <category>Comps</category>
-    <color>Black</color>
-    <manufacturer>HP</manufacturer>
-    <model>HHH</model>
-    <price>4000.0</price>
-    <quantity>5</quantity>
-    <subcategory>Monitors</subcategory>
+<items xmlns="sameUri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="sameUri item-good-test.xsd">
+    <item category="Computers">
+        <color>Black</color>
+        <manufacturer>HP</manufacturer>
+        <model>HHH</model>
+        <date>10-04-2019</date>
+        <price>4000.0</price>
+        <quantity>5</quantity>
+        <subcategory>Monitors</subcategory>
+    </item>
 </items>
